@@ -93,12 +93,8 @@ MetaID整体协议格式为：
 - Info 为用户基本信息节点。记录用户姓名、头像之类的基本信息。
 - Protocols 为协议节点。记录用户使用相关协议所产生的交易。
 
-```mermaid
-graph TD
-A(Root) --> B(Info)
-A --> C(Protocols)
+![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_1.png):
 
-```
 
 MetaID固定必须有的节点为Root和Info和Protocols。此三个节点约定不能更改名称，不接受Metanet的版本更新操作。
 
@@ -144,17 +140,7 @@ OP_0 OP_0 OP_RETURN meta <P(node)> <Root TxID> MetaID Info NULL NULL NULL NULL N
 
 结构图如下：
 
-```mermaid
-graph TD
-A(Root节点) --> B(Info)
-
-B --> B1(name)
-B --> B2(avatar)
-B --> B3(email)
-B --> B4(phone)
-B --> B5(bio)
-
-```
+![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_2.png):
 
 以上五个节点内容均应用可根据需要自行设置。节点不创建或节点内容为空均是可以接受的。但建议一般应用新建MetaID用户时，最少要设置name节点，以确定用户名。
 
@@ -178,19 +164,8 @@ OP_0 OP_RETURN meta <P(node)> <TxID(Info)> MetaID avatar <IMAGE BUFFER> 0 1 imag
 
 Protocols节点为记录用户使用各种第三方协议的交易情况。Protocols节点下的子节点为第三方协议节点，其node_name应为协议名称。协议节点下的子节点为用户使用该协议所产生的具体交易。结构如下：
 
+![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_3.png):
 
-
-```mermaid
-graph TD
-A(Root节点) --> C(Protocols)
-
-C --> C1(#协议1)
-C --> C2(#协议2)
-C --> C3(#协议3)
-C1-->C11(Tx1)
-C1-->C12(Tx2)
-C1-->C13(......)
-```
 
 由于Protocols的协议是开放的，所有应用方都可以构建自己的协议。故此Protocols下的子节点数是无限制的，每个协议下的结构由协议制定方/应用方自己决定。但需保证协议节点的标识具有唯一性。
 
@@ -244,21 +219,7 @@ OP_0 OP_RETURN meta <P(node)> <Txid(SampleProtocol)> MetaID <node_name> {"conten
 
 需注意的是，协议交易节点中的version值代表了其所遵循的协议版本，不同版本号代表其data内容有可能不一样。数据解析时，需根据不同的version号做不同的解析。上面例子中，生成的Metanet树结构参考如下：
 
-```mermaid
-graph TD
-A(Root) --> C(Protocols)
-
-C --> C1(SampleProtocol)
-C --> C2(协议2)
-C --> C3(协议3)
-C1-->|node_name:pubkey|C11("data:#123;content:这是一个测试内容,title:测试标题#125;")
-C1-->C12(Tx2)
-C1-->C13(......)
-A --> B(Info)
-B --> B1(name)
-B --> B2(......)
-```
-
+![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_4.png):
 
 
 ### 4. 总结
