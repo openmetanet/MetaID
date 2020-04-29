@@ -31,9 +31,10 @@ MetaID Root NULL 0 NULL text/plain UTF-8
 
 获取rootID
 
-e.g.
-
-https://whatsonchain.com/tx/57fab4aab7af94f7ed885cfc32ff6b15a4d90d400dea652f85390b4bec7b1051
+> e.g.
+>
+> https://whatsonchain.com/tx/57fab4aab7af94f7ed885cfc32ff6b15a4d90d400dea652f85390b4bec7b1051
+>
 
 在例子中 rootID 为 “57fab4aab7af94f7ed885cfc32ff6b15a4d90d400dea652f85390b4bec7b1051”
 
@@ -49,9 +50,10 @@ data内容
 MetaID Info NULL 0 NULL text/plain UTF-8
 ```
 
-e.g.
-
-https://whatsonchain.com/tx/a5c05146de8fa49d8641cf34ae556c982048cd74a22731285dd744a48b5ed400
+> e.g.
+>
+> https://whatsonchain.com/tx/a5c05146de8fa49d8641cf34ae556c982048cd74a22731285dd744a48b5ed400
+>
 
 infoNode 为 “a5c05146de8fa49d8641cf34ae556c982048cd74a22731285dd744a48b5ed400”
 
@@ -67,9 +69,10 @@ data内容
 MetaID name Alice 0 0.09 text/plain UTF-8
 ```
 
-e.g.
-
-https://whatsonchain.com/tx/cbbc2ca81876791e691d06087eeda502cf8d86c4b475c35a016ab8ba13dc3ab0
+> e.g.
+>
+> https://whatsonchain.com/tx/cbbc2ca81876791e691d06087eeda502cf8d86c4b475c35a016ab8ba13dc3ab0
+>
 
 nameNode为 “cbbc2ca81876791e691d06087eeda502cf8d86c4b475c35a016ab8ba13dc3ab0”
 
@@ -79,9 +82,8 @@ nameNode为 “cbbc2ca81876791e691d06087eeda502cf8d86c4b475c35a016ab8ba13dc3ab0�
 
 node_name 为 Protocols
 
-e.g.
-
-https://whatsonchain.com/tx/35cfa27d059be2e8af4490fc482253a9c047b30c59ceb64869a66885723a4e89
+>  e.g.
+> https://whatsonchain.com/tx/35cfa27d059be2e8af4490fc482253a9c047b30c59ceb64869a66885723a4e89
 
 nameNode为 “35cfa27d059be2e8af4490fc482253a9c047b30c59ceb64869a66885723a4e89”
 
@@ -91,19 +93,21 @@ nameNode为 “35cfa27d059be2e8af4490fc482253a9c047b30c59ceb64869a66885723a4e89�
 
 node_name 为 自定义数据， data为协议对应的brfcid
 
-e.g.
+> e.g.
+>
+> https://whatsonchain.com/tx/e995bbeb74da058900e9fec42e1d3be46689b7b5ee0c3899c483a9229323af9b
+>
 
-https://whatsonchain.com/tx/e995bbeb74da058900e9fec42e1d3be46689b7b5ee0c3899c483a9229323af9b
-
-nameNode为 “e995bbeb74da058900e9fec42e1d3be46689b7b5ee0c3899c483a9229323af9b”
+sampleProtocolNode为 “e995bbeb74da058900e9fec42e1d3be46689b7b5ee0c3899c483a9229323af9b”
 
 #### 6 创建sampleProtocolTxNode
 
 **sampleProtocolTxNode 是 sampleProtocolNode的子节点**
 
-e.g.
+> e.g.
+>
+> https://whatsonchain.com/tx/87b06ecfa3783a41c34235c1846b9f6daee773be7d74d65e482f6805b43b7422
+>
 
-https://whatsonchain.com/tx/87b06ecfa3783a41c34235c1846b9f6daee773be7d74d65e482f6805b43b7422
-
-nameNode为 “87b06ecfa3783a41c34235c1846b9f6daee773be7d74d65e482f6805b43b7422”
+sampleProtocolTxNode为 “87b06ecfa3783a41c34235c1846b9f6daee773be7d74d65e482f6805b43b7422”
 
