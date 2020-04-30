@@ -1,8 +1,8 @@
  # MetaID v0.1协议说明
 
-| brfc         | title           | authors                            | version |
-| ------------ | --------------- | ---------------------------------- | ------- |
-| d2c53c87b1f5 | MetaID Protocol | 撰写：ShowPayTeam 校对：MetaSVTeam | V0.1    |
+| brfc         | title           | authors                | version |
+| ------------ | --------------- | ---------------------- | ------- |
+| 224b9f82f330 | MetaID Protocol | ShowPayTeam MetaSVTeam | V0.1    |
 
 
 
