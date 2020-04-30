@@ -6,7 +6,7 @@
 
 
 
-### 1. 简介
+## 1. 简介
 
 MetaID是Metanet[1]的二级协议，旨在解决BSV上应用之间用户信息的无法连通而提出的协议。
 
@@ -20,7 +20,7 @@ MetaID希望越来越多钱包方和应用方都支持MetaID协议，从而达�
 
 
 
-### 2. MetaID协议
+## 2. MetaID协议
 
 MetaID整体协议格式为：
 
@@ -32,7 +32,7 @@ MetaID整体协议格式为：
 
 
 
-#### 2.1 Metanet标准部分
+### 2.1 Metanet标准部分
 
 其中前面三个元素即：
 
@@ -52,7 +52,7 @@ MetaID整体协议格式为：
 
 
 
-#### 2.2 MetaID二级协议部分
+### 2.2 MetaID二级协议部分
 
 后七部分，即：
 
@@ -86,7 +86,7 @@ MetaID整体协议格式为：
 
 
 
-### 3. MetaID结构
+## 3. MetaID结构
 
 本版本协议中，MetaID的根节点下只有两个子节点，分别是"Info"和"Protocols"。
 
@@ -100,7 +100,7 @@ MetaID固定必须有的节点为Root和Info和Protocols。此三个节点约定
 
 
 
-#### 3.1 Root节点
+### 3.1 Root节点
 
 Root节点是MetaID的顶点，根据Metanet协议，构建Metanet交易时TxID<sub>parent</sub>为空即为顶点。
 
@@ -116,7 +116,7 @@ MetaID相关P<sub>node</sub>节点的public key生成约定采用HD方案[2]生�
 
 
 
-#### 3.2 Info节点
+### 3.2 Info节点
 
 Info节点为存储用户基本信息的节点 ，node_name固定为"Info"。
 
@@ -160,7 +160,7 @@ OP_0 OP_RETURN meta <P(node)> <TxID(Info)> MetaID avatar <IMAGE BUFFER> 0 1 imag
 
 
 
-#### 3.3 Protocols节点
+### 3.3 Protocols节点
 
 Protocols节点为记录用户使用各种第三方协议的交易情况。Protocols节点下的子节点为第三方协议节点，其node_name应为协议名称。协议节点下的子节点为用户使用该协议所产生的具体交易。结构如下：
 
@@ -171,7 +171,7 @@ Protocols节点为记录用户使用各种第三方协议的交易情况。Proto
 
 
 
-##### 3.3.1 协议节点
+#### 3.3.1 协议节点
 
 **关于协议名字的约定**
 
@@ -205,7 +205,7 @@ OP_0 OP_RETURN meta <P(node)> <Txid(Protocols)> MetaID SampleProtocol 3065510ee0
 如果该协议对用户隐私特别敏感，协议可单独构建一个孤立的应用数据集，然后通过一个桥接节点来和MetaID主树关联。
 
 
-##### 3.3.2 协议交易节点
+#### 3.3.2 协议交易节点
 
 每个协议下的子节点均为用户使用该协议下的产生的具体交易，每条具体的交易称为协议交易节点。
 
@@ -230,7 +230,7 @@ OP_0 OP_RETURN meta <P(node)> <Txid(SampleProtocol)> MetaID <node_name> {"conten
 ![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_4.png)
 
 
-### 4. 总结
+## 4. 总结
 
 用以上方法构建的MetaID，可让用户和应用方得到下的便利：
 
@@ -241,7 +241,7 @@ OP_0 OP_RETURN meta <P(node)> <Txid(SampleProtocol)> MetaID <node_name> {"conten
 
 
 
-### 5. 参考文档
+## 5. 参考文档
 | 编号 | 参考           |
 | ---- | --------------- |
 |   [1]   | Metanet白皮书 https://nchain.com/app/uploads/2019/06/The-Metanet-Technical-Summary-v1.0.pdf |
