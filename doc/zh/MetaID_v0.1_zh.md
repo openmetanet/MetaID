@@ -68,10 +68,10 @@ MetaID整体协议格式为：
 | MetaID Flag | 固定为"MetaID"                                               |
 |   node_name | 节点标识名字，必须字段。                                     |
 |        data | 存储节点所对应的数据内容                                     |
-|     encrypt | 标识该节点内容是否加密。本协议版本支持两种方式：0为不加密；1为ECIES加密，即加密key为对应节点的公钥，采用对应节点路径的私钥解密。默认为0不加密。 |
+|     encrypt | 标识该节点内容是否加密。本版本协议支持两种方式：0为不加密；1为ECIES加密，即加密key为对应节点的公钥，采用对应节点路径的私钥解密。默认为0不加密。 |
 |     version | 节点类型的版本号，不同版本号意味着data内容的格式不相同。     |
-|   data_type | 可选项目。data对应的数据类型，可用数据类型请参考：https://www.iana.org/assignments/media-types/media-types.xhtmls。默认为text/plain |
-|    encoding | 可选项目。data对应的编码格式，可用编码类型请参考：https://www.iana.org/assignments/character-sets/character-sets.xhtml。默认为UTF-8， |
+|   data_type | 可选项目。data对应的数据类型，可用数据类型请参考：https://www.iana.org/assignments/media-types/media-types.xhtmls 默认为text/plain |
+|    encoding | 可选项目。data对应的编码格式，可用编码类型请参考：https://www.iana.org/assignments/character-sets/character-sets.xhtml 默认为UTF-8 |
 
 
 
@@ -123,7 +123,7 @@ Info节点为存储用户基本信息的节点 ，node_name固定为"Info"。
 Info节点的构造和Root相似，只是TxID<sub>parent</sub>需指向Root节点并将node_name设置为”Info“即可，以下为构建Info节点例子：
 
 ```
-OP_0 OP_0 OP_RETURN meta <P(node)> <Root TxID> MetaID Info NULL NULL NULL NULL NULL NULL
+OP_0 OP_RETURN meta <P(node)> <Root TxID> MetaID Info NULL NULL NULL NULL NULL NULL
 ```
 
 
@@ -156,7 +156,7 @@ avatar节点是存储用户头像信息，数据格式固定为binary。构建�
 OP_0 OP_RETURN meta <P(node)> <TxID(Info)> MetaID avatar <IMAGE BUFFER> 0 1 image/png binary
 ```
 
-其他节点均采用类似方式构建即可。需注意的是，如果某些信息比如phone节点信息希望加密，只需将encrypt设置为1，然后采用ECIES方式，用公钥对相关字符加密即可，这样加密的信息只有用户自己用对应私钥即可解密。
+其他节点均采用类似方式构建即可。需注意的是，如果某些信息比如phone节点信息希望加密，只需将encrypt设置为1，然后采用ECIES方式，用公钥对相关字符加密即可，这样加密后的信息只有用户自己用对应私钥即可解密。
 
 
 
@@ -195,7 +195,14 @@ OP_0 OP_RETURN meta <P(node)> <Txid(Protocols)> MetaID SampleProtocol 3065510ee0
 
 需注意的是，这些节点的结构虽然为协议制定方/应用方决定，但相关的节点创建还是由用户创建，为用户所掌握，用户只记录和自己相关的协议数据。
 
+##### 关于协议的隐私处理
 
+协议的隐私模型是由协议制定方/应用方制定，如果用户不希望其数据公开，建议可考虑如下方式：
+
+- 将节点的encrypt设置为1。这样数据只有用户自己可查看。
+- 该协议的数据加密方式采用ECDH协商密码的方式来处理。这样数据就只有用户和应用方能查看，用户也能授权或委托应用方来授权给第三方来访问。
+
+如果该协议对用户隐私特别敏感，协议可构建单独构建一个孤立的应用数据集，然后通过一个桥接节点来和MetaID主树关联。
 
 ##### 3.3.2 协议交易节点
 
