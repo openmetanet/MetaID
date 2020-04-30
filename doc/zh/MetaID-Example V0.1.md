@@ -1,5 +1,11 @@
 # MetaID-Example V0.1
 
+
+
+metaID-Example 是一个创建metaid的例子，下面是 metaid 树，附带了用户信息节点和协议节点，层级如下：
+
+![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_4.png):
+
 #### 0.MetaID 数据部分格式定义
 
 ```
@@ -21,9 +27,9 @@
 
 #### 1 创建rootNode
 
-**root 节点规定使用hd钱包 0/0 路径**，其他Node的路径可以自定义。
+rootNode 是用户的第一个节点 也是用户的MetaID，协议约定**root 节点规定使用hd钱包 0/0 路径**，其他Node的路径可以自定义。
 
-data 内容  对应协议
+Data内容根据协议如下
 
 ```
 MetaID Root NULL 0 NULL text/plain UTF-8
@@ -36,13 +42,13 @@ MetaID Root NULL 0 NULL text/plain UTF-8
 > https://whatsonchain.com/tx/57fab4aab7af94f7ed885cfc32ff6b15a4d90d400dea652f85390b4bec7b1051
 >
 
-在例子中 rootID 为 “57fab4aab7af94f7ed885cfc32ff6b15a4d90d400dea652f85390b4bec7b1051”
+在例子中 rootID/metaID 为 “57fab4aab7af94f7ed885cfc32ff6b15a4d90d400dea652f85390b4bec7b1051”
 
 #### 2 创建 infoNode
 
 **在metenet/metaID中 infoNode 是 rootNode的子节点**
 
-node_name为Info
+node_name约定为Info
 
 data内容
 
@@ -56,6 +62,8 @@ MetaID Info NULL 0 NULL text/plain UTF-8
 >
 
 infoNode 为 “a5c05146de8fa49d8641cf34ae556c982048cd74a22731285dd744a48b5ed400”
+
+
 
 #### 3 创建nameNode
 
@@ -75,6 +83,8 @@ MetaID name Alice 0 0.09 text/plain UTF-8
 >
 
 nameNode为 “cbbc2ca81876791e691d06087eeda502cf8d86c4b475c35a016ab8ba13dc3ab0”
+
+
 
 #### 4 创建protocolsNode
 
@@ -110,4 +120,10 @@ sampleProtocolNode为 “e995bbeb74da058900e9fec42e1d3be46689b7b5ee0c3899c483a92
 >
 
 sampleProtocolTxNode为 “87b06ecfa3783a41c34235c1846b9f6daee773be7d74d65e482f6805b43b7422”
+
+
+
+**自此，metaID信息就上链完成。**
+
+**用户可以从支持metaid的服务商，比如metasv服务获取对应的metaID-Info等信息。**
 
