@@ -4,7 +4,7 @@
 
 metaID-Example 是一个创建metaid的例子，下面是 metaid 树，附带了用户信息节点和协议节点，层级如下：
 
-![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_4.png):
+![image](https://github.com/showMoneyapp/MetaID/blob/master/doc/zh/res/zh_4.png)
 
 #### 0.MetaID 数据部分格式定义
 
