@@ -8,7 +8,7 @@ MetaID Protocol
 
 
 
-en
+en:
 
 MetaID V0.1 Protocol_Introduction-EN
 
@@ -16,7 +16,7 @@ https://github.com/showMoneyapp/MetaID/blob/master/doc/en/MetaID%20v0.1Protocol_
 
 
 
-zh
+zh:
 
 
 MetaIDV0.1 
