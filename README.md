@@ -12,7 +12,7 @@ en
 
 MetaID V0.1 Protocol_Introduction-EN
 
-
+https://github.com/showMoneyapp/MetaID/blob/master/doc/en/MetaID%20v0.1Protocol_Introduction-EN.md
 
 
 
