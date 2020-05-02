@@ -22,8 +22,7 @@ def checkOne(object):
 
 def check():
     if checkOne(root) and checkOne(info) and checkOne(name) and checkOne(protocol) and checkOne(
-            sample_protocol) and checkOne(sample_protocol_detail) and checkOne(show_text_protocol) and checkOne(
-        show_text_protocol_detail):
+            sample_protocol) and checkOne(sample_protocol_detail) :
         print("All check pass")
         return True
     else:
